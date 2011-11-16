@@ -473,7 +473,7 @@ _____AWK`
 
 screen3_set_hostname(){
 	screen3_hostname
-	hostname="$screen_session.$hostname"
+	hostname="$screen_name.$hostname"
 }
 screen3_hostname(){
 	if [ -z "$HOST" ]; then
