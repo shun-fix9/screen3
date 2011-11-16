@@ -232,6 +232,9 @@ screen3_input_session_number(){
 	echo
 	echo -n "select session(or [exit|quit]): "
 	read input_session_number
+	if [ $? -gt 0 ]; then
+		is_exit=1
+	fi
 	if [ -z "$input_session_number" ]; then
 		input_session_number=$default_session_number
 	fi
