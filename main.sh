@@ -234,6 +234,7 @@ screen3_input_session_number(){
 	read input_session_number
 	if [ $? -gt 0 ]; then
 		is_exit=1
+		echo
 	fi
 	if [ -z "$input_session_number" ]; then
 		input_session_number=$default_session_number
