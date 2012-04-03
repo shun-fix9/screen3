@@ -501,7 +501,8 @@ screen3_user(){
 }
 
 screen3_change_window_title(){
-	if [ $TERM != "screen" ]; then
+	# screen or screen-256color
+	if [ ${TERM:0:6} != "screen" ]; then
 		local user; screen3_user
 		echo -ne "\e]0;${user}@${hostname}\007"
 	else
@@ -509,7 +510,8 @@ screen3_change_window_title(){
 	fi
 }
 screen3_restore_window_title(){
-	if [ $TERM != "screen" ]; then
+	# screen or screen-256color
+	if [ ${TERM:0:6} != "screen" ]; then
 		echo -ne "\e]0;${USER}@${HOSTNAME}\007"
 	fi
 }
